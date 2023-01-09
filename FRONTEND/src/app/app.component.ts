@@ -8,8 +8,8 @@ import { Client } from './model/client';
 })
 export class AppComponent {
   title = 'projetweb';
-  isConnected = true;
-  username = 'Pandabrutie';
+  isConnected = false;
+  username = '';
   id = '';
 
   connected(user: Client) {
