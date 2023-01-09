@@ -1,0 +1,35 @@
+<!-- image of the product -->
+<div class="container">
+    <input class="goback" type="submit" value=" Retour " [routerLink]="['/']">
+
+    <div class="content">
+        <div class="card">
+            <div class="imgBx">
+                <img src="{{product.image}}">
+            </div>
+        </div>
+
+        <!-- product details -->
+        <div class="cardContent">
+            <h2>{{product.name}}</h2>
+            <mat-divider></mat-divider>
+            <div class="productDescription">
+
+                <div class="btn" (click)="addFromShoppingList()">
+                    Ajouter au panier : {{product.price}} $
+                </div>
+                <mat-chip-list multiple>
+                    <mat-chip>
+                        {{product.category | productCategory}}
+                    </mat-chip>
+                </mat-chip-list>
+
+            </div>
+            <mat-divider></mat-divider>
+            <div class="description">
+                <h3>Description :</h3>
+                <p>{{product.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

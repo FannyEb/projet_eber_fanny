@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="filters">
+        <h2>Filtres</h2>
+        <input type="text" placeholder="Recherche" (keypress)="getProductFiltered()" [(ngModel)]="filteredTerm">
+        <mat-chip-list multiple>
+            <div *ngFor="let category of categories">
+                <mat-chip appChipActivate (click)="categoryFilterUpdate(category)">
+                    {{category | productCategory}}
+                </mat-chip>
+            </div>
+        </mat-chip-list>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+
+
+    <div class="listCard">
+        <div class="card" *ngFor="let product of products">
+            <a class="imgBx" [routerLink]="['product',product.id]">
+                <img src="{{product.image}}">
+            </a>
+
+            <div class="contentBx">
+
+                <h2>{{product.name}}</h2>
+                <a class="btn" (click)="addToShoppingList(product)">
+                    <mat-icon>shopping_bag</mat-icon>
+                    <span class="price">{{product.price}} $</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

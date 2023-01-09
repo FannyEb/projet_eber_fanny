@@ -1,0 +1,35 @@
+<div class="main-content">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+        <p class="noAccount">Inscription</p>
+        <div class="group-form">
+            <input type="text" formControlName="firstName" placeholder="Prénom" [(ngModel)]="client.lastname"><br>
+            <input type="text" formControlName="lastName" placeholder="Nom" [(ngModel)]="client.firstname"><br>
+            <!-- select for civility -->
+            <div class="select">
+                <select formControlName="civility" [(ngModel)]="client.civility">
+                    <option value="0">Madame</option>
+                    <option value="1">Monsieur</option>
+                    <option value="2">Autre</option>
+                </select><br>
+            </div>
+        </div>
+        <div class="group-form">
+            <input type="text" formControlName="email" placeholder="Email" [(ngModel)]="client.email"><br>
+            <input type="text" formControlName="phone" placeholder="Téléphone" appInputNumbers="18" [(ngModel)]="client.phone"><br>
+            <input type="text" formControlName="country" placeholder="Pays" [(ngModel)]="client.country"><br>
+
+        </div>
+        <div class="group-form">
+            <input type="text" formControlName="address" placeholder="Adresse" [(ngModel)]="client.address"><br>
+            <input type="text" formControlName="city" placeholder="Ville" [(ngModel)]="client.city"><br>
+            <input type="text" formControlName="codeCity" appInputNumbers="5" placeholder="Code postal" [(ngModel)]="client.codecity"><br>
+        </div>
+        <div class="group-form">
+            <input type="text" formControlName="login" placeholder="Identifiant" [(ngModel)]="client.login"><br>
+            <input type="password" formControlName="password" placeholder="Mot de passe" [(ngModel)]="client.password"><br>
+            <input type="password" formControlName="confirmPassword" placeholder="Confirmer le mot de passe"><br>
+        </div>
+        <input type="submit" value="S'inscrire"><br>
+        <a (click)="updateHasAccount()">Déjà un compte ?</a>
+    </form>
+</div>

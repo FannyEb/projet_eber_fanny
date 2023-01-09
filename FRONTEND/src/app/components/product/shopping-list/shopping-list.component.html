@@ -1,0 +1,33 @@
+<div class="container">
+    <input type="submit" value="Retour" [routerLink]="['/']">
+    <table>
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of dataSource$ | async">
+                <td>{{product.name}}</td>
+                <td>
+                    <div class="quantity">
+                        <mat-icon class="less" (click)="addFromShoppingList(product)">expand_less</mat-icon>
+                        {{ product.quantity }}
+                        <mat-icon class="more" (click)="deleteFromShoppingList(product)">expand_more</mat-icon>
+                    </div>
+                </td>
+                <td>{{ product.price * product.quantity }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Prix total</td>
+                <td></td>
+                <td>{{totalPrice$ | async}}</td>
+
+            </tr>
+        </tfoot>
+    </table>
+</div>

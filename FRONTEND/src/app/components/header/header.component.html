@@ -1,0 +1,39 @@
+<header>
+    <p class="title">My App</p>
+    <nav>
+        <ul *ngIf="username">
+            <mat-icon [routerLink]="['shopping-list']" matBadge="{{numberProduct$ | async}}" matBadgeColor="warn" class="max-width material-symbols-outlined">shopping_bag</mat-icon>
+        </ul>
+        <div class="account">
+            <ul>
+                <li *ngIf="!username; else connected">
+                    <a routerLink="/" class="icon">
+                        <span class="material-symbols-outlined">
+                            login
+                        </span>
+                    </a>
+                </li>
+                <ng-template #connected>
+                    <li class="space">
+                        <a [routerLink]="['/client', id]">
+                            <span class="material-symbols-outlined">
+                                account_circle
+                            </span>
+                            <p>
+                                {{ username }}
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/" class="icon" (click)="disconnected.emit()">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span>
+                        </a>
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </nav>
+
+</header>

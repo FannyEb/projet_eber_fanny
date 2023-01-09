@@ -1,0 +1,116 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0e0915;
+    z-index: 10000;
+    border-bottom: 4px solid #323042;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px 0 20px;
+}
+
+$white: rgba(255,255,255,0.3);
+
+.title {
+    min-width: fit-content;
+    color: #fff;
+    font-size: 2em;
+    align-self: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+
+    @media all and (min-width: 545px) {
+        flex-direction: row;
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    @media all and (min-width: 545px) {
+        flex-direction: row;
+    }
+
+    li {
+        display: none;
+
+        @media all and (min-width: 545px) {
+            display: block;
+        }
+    }
+
+    a {
+        display: flex;
+        flex-direction: row;
+        margin-left: 2em;
+        background: transparent;
+        padding: 1em;
+        border: none;
+        border-radius: 5000px;
+        backdrop-filter: blur(5px);
+        box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        height: 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        text-align: center;
+
+        @media all and (min-width: 545px) {
+            padding: 20px;
+        }
+    }
+
+    .icon {
+        display: block;
+        margin: 0;
+        &:hover {
+            background: transparent;
+            box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+            border-left: 0;;
+            border-top: 0;
+        }
+    }
+
+    .space {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: max-content;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1em;
+        height: 20px;
+
+        @media all and (min-width: 545px) {
+            padding: 20px;
+        }
+    }
+}
+
+span{
+    margin-right: 0.5rem;
+}
+
+mat-icon{
+    cursor: pointer;
+}

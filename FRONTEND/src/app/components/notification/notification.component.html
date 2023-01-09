@@ -1,0 +1,40 @@
+<div id="container">
+  <div id="success-box" *ngIf="isSuccess && message">
+    <div class="face">
+      <div class="eye"></div>
+      <div class="eye right"></div>
+      <div class="mouth happy"></div>
+    </div>
+    <div class="shadow scale"></div>
+    <div class="message">
+      <h1 class="alert">Succès!</h1>
+      <p>{{message}}</p>
+    </div>
+  </div>
+
+  <div id="error-box" *ngIf="isError && message">
+    <div class="face2">
+      <div class="eye"></div>
+      <div class="eye right"></div>
+      <div class="mouth sad"></div>
+    </div>
+    <div class="shadow move"></div>
+    <div class="message">
+      <h1 class="alert">Erreur!</h1>
+      <p>{{message}}</p>
+    </div>
+  </div>
+
+  <div id="warning-box" *ngIf="isWarning && message">
+    <div class="face3">
+      <div class="eye"></div>
+      <div class="eye right"></div>
+      <div class="mouth no-emotion"></div>
+    </div>
+    <div class="shadow scale"></div>
+    <div class="message">
+      <h1 class="alert">Attention!</h1>
+      <p>{{message}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<ng-container class="content" *ngIf="isConnected; else login">
+    <app-header [username]="username" [id]="id" (disconnected)="disconnected()"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</ng-container>
+<app-notification></app-notification>
+
+<ng-template #login>
+    <app-login (user)="connected($event)"></app-login>
+</ng-template>

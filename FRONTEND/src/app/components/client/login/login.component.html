@@ -1,0 +1,27 @@
+
+<div class="main-content" >
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="hasAccount; else signUp">
+    <p class="hasAccount">Bienvenue</p>
+    <input type="text" formControlName="login" placeholder="Identifiant"><br>
+    <input type="password" formControlName="password" placeholder="Mot de passe"><br>
+    <input type="submit" value="Se connecter"><br>
+    <a (click)="hasAccount = false">Pas de compte ?</a>
+    
+  <div class="drops" *ngIf="hasAccount">
+    <div class="drop drop-1"></div>
+    <div class="drop drop-2"></div>
+    <div class="drop drop-3"></div>
+    <div class="drop drop-4"></div>
+    <div class="drop drop-5"></div>
+    <div class="drop drop-6"></div>
+    <div class="drop drop-7"></div>
+    <div class="drop drop-8"></div>
+    <div class="drop drop-9"></div>
+    <div class="drop drop-10"></div>
+  </div>
+  </form>
+</div>
+
+<ng-template #signUp>
+    <app-sign-up (hasAccount)="updateHasAccount($event)" (user)="updateUser($event)"></app-sign-up>
+</ng-template>
